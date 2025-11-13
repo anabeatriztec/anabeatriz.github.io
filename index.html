@@ -3,135 +3,631 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Ana Beatriz Reis — Currículo</title>
-  <meta name="description" content="Currículo profissional de Ana Beatriz Reis — Suporte Administrativo e TI" />
+  <title>Ana Beatriz Reis — Currículo Profissional</title>
+  <meta name="description" content="Currículo profissional de Ana Beatriz Reis — Analista Administrativa e Suporte TI" />
   <style>
-    :root{
-      --bg:#f7f8fb; --card:#ffffff; --accent:#0b6efd; --muted:#6b7280; --glass: rgba(11,110,253,0.08);
-      --maxw:900px;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1e40af;
+      --secondary: #64748b;
+      --bg-gradient-start: #f8fafc;
+      --bg-gradient-end: #e0e7ff;
+      --card-bg: #ffffff;
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --border-color: #e2e8f0;
+      --accent-light: #eff6ff;
+      --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     }
-    *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(180deg,var(--bg),#ffffff);color:#111827;display:flex;align-items:center;justify-content:center;padding:32px}
-    .container{width:100%;max-width:var(--maxw)}
-    .card{background:var(--card);border-radius:14px;padding:28px;box-shadow:0 10px 30px rgba(15,23,42,0.06)}
-    header{display:flex;gap:20px;align-items:center}
-    .avatar{width:96px;height:96px;border-radius:12px;background:linear-gradient(135deg,var(--glass),transparent);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);font-size:28px}
-    h1{margin:0;font-size:20px}
-    .meta{color:var(--muted);font-size:14px}
-    .grid{display:grid;grid-template-columns:1fr 320px;gap:28px;margin-top:20px}
-    main{min-width:0}
-    section{margin-bottom:18px}
-    h2{font-size:14px;margin:0 0 10px 0;color:#111827}
-    p.lead{margin:0;color:#374151}
-    ul{margin:0;padding-left:18px;color:#374151}
-    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--glass);color:var(--accent);font-weight:600;font-size:13px}
-    .side{background:linear-gradient(180deg,rgba(250,250,252,0.8),transparent);padding:18px;border-radius:10px;height:100%}
-    .info{font-size:14px;color:#374151;line-height:1.5}
-    .btn{display:inline-block;padding:10px 14px;border-radius:8px;background:var(--accent);color:white;text-decoration:none;font-weight:600}
-    .muted{color:var(--muted);font-size:13px}
-    .skills{display:flex;flex-wrap:wrap;gap:8px}
-    .skill{padding:6px 8px;border-radius:8px;background:#f3f4f6;font-size:13px;color:#111827}
-    @media (max-width:880px){.grid{grid-template-columns:1fr;}.side{order:2}}
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      animation: fadeIn 0.6s ease-out;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Header Section */
+    .header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      padding: 48px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 400px;
+      height: 400px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      z-index: 0;
+    }
+    
+    .header-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    
+    .avatar {
+      width: 120px;
+      height: 120px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 42px;
+      font-weight: 700;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      flex-shrink: 0;
+    }
+    
+    .header-info h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+    
+    .header-subtitle {
+      font-size: 18px;
+      opacity: 0.95;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+    
+    .header-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+    
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .meta-item::before {
+      content: '•';
+      font-size: 20px;
+    }
+    
+    .meta-item:first-child::before {
+      content: '📍';
+      font-size: 16px;
+    }
+    
+    .meta-item a {
+      color: white;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+      transition: border-color 0.3s;
+    }
+    
+    .meta-item a:hover {
+      border-color: white;
+    }
+    
+    /* Main Content */
+    .content {
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 40px;
+    }
+    
+    .main-column section {
+      margin-bottom: 36px;
+    }
+    
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--accent-light);
+    }
+    
+    .section-title::before {
+      content: '';
+      width: 4px;
+      height: 24px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+    
+    /* Profile Section */
+    .profile-text {
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    
+    /* Experience Section */
+    .experience-item {
+      margin-bottom: 24px;
+      padding-left: 20px;
+      border-left: 3px solid var(--accent-light);
+      transition: border-color 0.3s;
+    }
+    
+    .experience-item:hover {
+      border-left-color: var(--primary);
+    }
+    
+    .experience-header {
+      margin-bottom: 8px;
+    }
+    
+    .company-name {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    
+    .role-period {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    
+    .role {
+      color: var(--text-secondary);
+      font-size: 14px;
+      font-weight: 500;
+    }
+    
+    .period {
+      color: var(--secondary);
+      font-size: 13px;
+      background: var(--accent-light);
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+    
+    .experience-item ul {
+      margin-top: 12px;
+      padding-left: 20px;
+    }
+    
+    .experience-item li {
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    
+    /* Education & Skills */
+    .education-list,
+    .info-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .education-list li {
+      padding: 12px 16px;
+      margin-bottom: 8px;
+      background: var(--accent-light);
+      border-radius: 10px;
+      color: var(--text-secondary);
+      font-size: 14px;
+      transition: transform 0.2s, background 0.2s;
+    }
+    
+    .education-list li:hover {
+      transform: translateX(4px);
+      background: #dbeafe;
+    }
+    
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 10px;
+    }
+    
+    .skill-tag {
+      padding: 10px 14px;
+      background: linear-gradient(135deg, var(--accent-light) 0%, #e0e7ff 100%);
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--primary);
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .skill-tag:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+    }
+    
+    /* Sidebar */
+    .sidebar {
+      background: linear-gradient(180deg, var(--accent-light) 0%, transparent 100%);
+      padding: 24px;
+      border-radius: 16px;
+      height: fit-content;
+      position: sticky;
+      top: 20px;
+    }
+    
+    .sidebar-section {
+      margin-bottom: 28px;
+    }
+    
+    .sidebar-section:last-child {
+      margin-bottom: 0;
+    }
+    
+    .sidebar-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .sidebar-content {
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    
+    .sidebar-content a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.3s;
+    }
+    
+    .sidebar-content a:hover {
+      opacity: 0.7;
+    }
+    
+    .download-btn {
+      display: block;
+      width: 100%;
+      padding: 14px 20px;
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: background 0.3s, transform 0.2s;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    }
+    
+    .download-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+    }
+    
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-left: 12px;
+    }
+    
+    .highlight-box {
+      background: white;
+      padding: 16px;
+      border-radius: 10px;
+      border-left: 4px solid var(--primary);
+      margin-top: 8px;
+    }
+    
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    
+    .stat-item {
+      text-align: center;
+      padding: 12px;
+      background: white;
+      border-radius: 10px;
+    }
+    
+    .stat-number {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    
+    .stat-label {
+      font-size: 11px;
+      color: var(--secondary);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      body {
+        padding: 20px 12px;
+      }
+      
+      .header {
+        padding: 32px 24px;
+      }
+      
+      .header-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .header-info h1 {
+        font-size: 24px;
+      }
+      
+      .header-subtitle {
+        font-size: 16px;
+      }
+      
+      .header-meta {
+        justify-content: center;
+        font-size: 13px;
+      }
+      
+      .content {
+        grid-template-columns: 1fr;
+        padding: 24px;
+        gap: 32px;
+      }
+      
+      .sidebar {
+        order: -1;
+        position: static;
+      }
+      
+      .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      }
+      
+      .stats {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      
+      .card {
+        box-shadow: none;
+        border-radius: 0;
+      }
+      
+      .download-btn {
+        display: none;
+      }
+      
+      .sidebar {
+        position: static;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="card">
-      <header>
-        <div class="avatar">AB</div>
-        <div>
-          <h1>Ana Beatriz Reis da Silva Souza <span class="badge">28 anos</span></h1>
-          <div class="meta">Taguatinga, Brasília – DF • <span class="muted">(61) 99102-6162</span> • <a href="mailto:anabeatrizreis1903@gmail.com">anabeatrizreis1903@gmail.com</a></div>
+      <!-- Header -->
+      <div class="header">
+        <div class="header-content">
+          <div class="avatar">AB</div>
+          <div class="header-info">
+            <h1>Ana Beatriz Reis da Silva Souza<span class="badge">28 anos</span></h1>
+            <div class="header-subtitle">Analista Administrativa | Suporte TI | Gestão de Dados</div>
+            <div class="header-meta">
+              <span class="meta-item">Taguatinga, Brasília – DF</span>
+              <span class="meta-item">(61) 99102-6162</span>
+              <span class="meta-item"><a href="mailto:anabeatrizreis1903@gmail.com">anabeatrizreis1903@gmail.com</a></span>
+            </div>
+          </div>
         </div>
-      </header>
+      </div>
 
-      <div class="grid">
-        <main>
+      <!-- Main Content -->
+      <div class="content">
+        <div class="main-column">
+          
+          <!-- Profile -->
           <section>
-            <h2>Perfil profissional</h2>
-            <p class="lead">Profissional com seis anos de experiência em rotinas administrativas e suporte na área de Tecnologia da Informação. Foco em organização, controle de dados e melhoria contínua de processos. Comportamento proativo, facilidade para trabalho em equipe e bom relacionamento interpessoal.</p>
+            <h2 class="section-title">Perfil Profissional</h2>
+            <p class="profile-text">
+              Profissional com seis anos de experiência sólida em rotinas administrativas e suporte na área de Tecnologia da Informação. 
+              Especializada em organização, controle de dados e melhoria contínua de processos. Destaco-me pelo comportamento proativo, 
+              facilidade para trabalho em equipe e excelente relacionamento interpessoal. Busco constantemente aprimoramento profissional 
+              e entrego resultados com foco em qualidade e eficiência.
+            </p>
           </section>
 
+          <!-- Experience -->
           <section>
-            <h2>Experiência</h2>
-            <div>
-              <strong>UNITECH</strong> — Auxiliar Administrativo / Analista de Dados e Contratos<br>
-              <span class="muted">jul/2019 – atualmente</span>
+            <h2 class="section-title">Experiência Profissional</h2>
+            
+            <div class="experience-item">
+              <div class="experience-header">
+                <div class="company-name">UNITECH</div>
+                <div class="role-period">
+                  <span class="role">Auxiliar Administrativo / Analista de Dados e Contratos</span>
+                  <span class="period">jul/2019 – atualmente (5+ anos)</span>
+                </div>
+              </div>
               <ul>
-                <li>Gestão e controle de contratos, emissão de relatórios e acompanhamento de prazos contratuais.</li>
-                <li>Elaboração e manutenção de planilhas de monitoramento de indicadores e dados operacionais.</li>
-                <li>Suporte à equipe de projetos, organização documental e melhoria de processos administrativos.</li>
-                <li>Garantia de qualidade dos dados e auxílio em análises que subsidiaram decisões internas.</li>
+                <li>Gestão completa de contratos: análise, controle de vigências e emissão de relatórios gerenciais para tomada de decisão</li>
+                <li>Elaboração e manutenção de planilhas complexas para monitoramento de indicadores e dados operacionais</li>
+                <li>Suporte estratégico à equipe de projetos, incluindo organização documental e otimização de processos administrativos</li>
+                <li>Garantia de qualidade e integridade dos dados, realizando análises que subsidiaram decisões estratégicas da empresa</li>
+                <li>Implementação de melhorias em processos que resultaram em maior eficiência operacional</li>
               </ul>
             </div>
-            <div style="margin-top:12px">
-              <strong>CAESB – Companhia de Saneamento Ambiental do Distrito Federal</strong> — Estagiária<br>
-              <span class="muted">ago/2015 – mar/2017</span>
+
+            <div class="experience-item">
+              <div class="experience-header">
+                <div class="company-name">CAESB – Companhia de Saneamento Ambiental do DF</div>
+                <div class="role-period">
+                  <span class="role">Estagiária</span>
+                  <span class="period">ago/2015 – mar/2017 (1 ano e 8 meses)</span>
+                </div>
+              </div>
               <ul>
-                <li>Apoio nas rotinas administrativas e técnicas do setor; controle de documentos e registros.</li>
-                <li>Organização de planilhas e apoio à equipe de campo e escritório.</li>
+                <li>Apoio nas rotinas administrativas e técnicas do setor, com foco em controle documental</li>
+                <li>Organização e gerenciamento de planilhas para acompanhamento de atividades</li>
+                <li>Suporte à equipe de campo e escritório, garantindo fluxo eficiente de informações</li>
               </ul>
             </div>
           </section>
 
+          <!-- Education -->
           <section>
-            <h2>Formação</h2>
-            <ul>
-              <li>Curso Técnico em Edificações — SENAI</li>
-              <li>Curso Técnico em Segurança do Trabalho — SENAI</li>
-              <li>Curso de Empreendedorismo — Fundação Bradesco</li>
-              <li>Cursando Inglês — Centro Interescolar de Línguas de Taguatinga (CILT)</li>
+            <h2 class="section-title">Formação Acadêmica e Cursos</h2>
+            <ul class="education-list">
+              <li><strong>Curso Técnico em Edificações</strong> — SENAI</li>
+              <li><strong>Curso Técnico em Segurança do Trabalho</strong> — SENAI</li>
+              <li><strong>Curso de Empreendedorismo</strong> — Fundação Bradesco</li>
+              <li><strong>Inglês (em andamento)</strong> — Centro Interescolar de Línguas de Taguatinga (CILT)</li>
             </ul>
           </section>
 
+          <!-- Skills -->
           <section>
-            <h2>Conhecimentos e habilidades</h2>
-            <div class="skills">
-              <span class="skill">Pacote Office (Excel avançado)</span>
-              <span class="skill">Word & PowerPoint</span>
-              <span class="skill">Windows</span>
-              <span class="skill">Operação de microcomputadores</span>
-              <span class="skill">Controle e análise de dados</span>
-              <span class="skill">Organização documental</span>
-              <span class="skill">Comunicação interpessoal</span>
+            <h2 class="section-title">Conhecimentos e Competências</h2>
+            <div class="skills-grid">
+              <div class="skill-tag">Excel Avançado</div>
+              <div class="skill-tag">Word & PowerPoint</div>
+              <div class="skill-tag">Windows</div>
+              <div class="skill-tag">Análise de Dados</div>
+              <div class="skill-tag">Gestão de Contratos</div>
+              <div class="skill-tag">Organização</div>
+              <div class="skill-tag">Processos</div>
+              <div class="skill-tag">Comunicação</div>
+              <div class="skill-tag">Trabalho em Equipe</div>
+              <div class="skill-tag">Relatórios Gerenciais</div>
             </div>
           </section>
 
-          <section>
-            <h2>Informações adicionais</h2>
-            <p class="info">Disponível para novos desafios, com interesse em áreas que envolvam tecnologia, gestão administrativa e melhoria de processos. Comprometida com o aprendizado contínuo e com a entrega de resultados de qualidade.</p>
-          </section>
+        </div>
 
-        </main>
-
-        <aside class="side">
-          <div style="margin-bottom:12px">
-            <h2>Contato</h2>
-            <div class="info">
-              Taguatinga, Brasília – DF<br>
-              (61) 99102-6162<br>
-              <a href="mailto:anabeatrizreis1903@gmail.com">anabeatrizreis1903@gmail.com</a>
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">Estatísticas</h3>
+            <div class="stats">
+              <div class="stat-item">
+                <div class="stat-number">6+</div>
+                <div class="stat-label">Anos de Experiência</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Dedicação</div>
+              </div>
             </div>
           </div>
 
-          <div style="margin-bottom:12px">
-            <h2>Download</h2>
-            <a class="btn" href="Curriculo_AnaBeatriz.pdf" target="_blank" rel="noopener">Baixar currículo (PDF)</a>
-            <div class="muted" style="margin-top:8px;font-size:12px">Link pronto para uso no repositório GitHub (coloque aqui o PDF com o nome acima).</div>
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">Contato</h3>
+            <div class="sidebar-content">
+              📍 Taguatinga, Brasília – DF<br>
+              📞 (61) 99102-6162<br>
+              ✉️ <a href="mailto:anabeatrizreis1903@gmail.com">anabeatrizreis1903@gmail.com</a>
+            </div>
           </div>
 
-          <div style="margin-bottom:12px">
-            <h2>Resumo rápido</h2>
-            <p class="muted" style="margin:0">6 anos de experiência • Administração de contratos • Análise de dados • Pacote Office</p>
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">Download</h3>
+            <a class="download-btn" href="Curriculo_AnaBeatriz.pdf" download>
+              📄 Baixar Currículo PDF
+            </a>
           </div>
 
-          <div>
-            <h2>Disponibilidade</h2>
-            <p class="muted" style="margin:0">Imediata para novas oportunidades</p>
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">Destaques</h3>
+            <div class="highlight-box">
+              <div class="sidebar-content">
+                ✓ Gestão de contratos<br>
+                ✓ Análise de dados<br>
+                ✓ Excel avançado<br>
+                ✓ Melhoria de processos<br>
+                ✓ Trabalho em equipe
+              </div>
+            </div>
           </div>
+
+          <div class="sidebar-section">
+            <h3 class="sidebar-title">Disponibilidade</h3>
+            <div class="sidebar-content">
+              <strong style="color: var(--primary);">✓ Imediata</strong> para novas oportunidades profissionais
+            </div>
+          </div>
+
         </aside>
-
       </div>
 
     </div>
